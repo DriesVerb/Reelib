@@ -1,12 +1,15 @@
-interface ParagraphProps {
-  content: string
-}
+import { Txt } from "../textTypes";
 
-import './Paragraph.css' 
+import "./paragraph.css";
+
+interface ParagraphProps extends Txt {}
 
 export const Paragraph = (props: ParagraphProps) => {
+  const { children } = props
 
-  const { content } = props
-
-  return <p className="paragraph-el">{content}</p>
-}
+  return (
+    <>
+      <p className="paragraph-el">{children}</p>
+    </>
+  );
+};
